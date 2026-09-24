@@ -58,15 +58,7 @@ public class MainManager : MonoBehaviour
                 brick.onDestroyed.AddListener(AddPoint);
             }
         }
-
-        if (PersistenceManager.instance.playerName != null)
-        {
-            bestScoreText.text = $"Best Score : {PersistenceManager.instance.playerName} : {0}";
-        }
-        else
-        {
-            Debug.Log("PersistenceManager.instance.playerName is null");
-        }
+        SetBestScoreText();
     }
 
     private void Update()
@@ -103,5 +95,35 @@ public class MainManager : MonoBehaviour
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
+        PersistenceManager.instance.SetCurrentPlayer(PersistenceManager.instance.currPlayer.name, m_Points);
+        PersistenceManager.instance.UpdateLeaderboard();
+        PersistenceManager.instance.Save();
+        PersistenceManager.instance.LoadAll();
+        SetBestScoreText();
+    }
+
+    void SetBestScoreText()
+    {
+        //PersistenceManager.instance.LogLeaderboard();
+        var leaderboard = PersistenceManager.instance.GetLeaderboard();
+        if (leaderboard.Count > 0 && leaderboard[0] != null)
+        {
+            bestScoreText.text = $"Best Score : {leaderboard[0].name} : {leaderboard[0].score}";
+        }
+        else
+        {
+            bestScoreText.text = "Best Score : None : 0";
+            Debug.Log("PersistenceManager.instance.highScorer is null");
+        }
+    }
+
+    public void NavigateToMainMenu()
+    {
+        SceneManager.LoadScene("main menu");
+    }
+
+    public void NavigateToLeaderboard()
+    {
+        SceneManager.LoadScene("Leaderboard");
     }
 }

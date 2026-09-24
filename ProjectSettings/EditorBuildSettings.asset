@@ -9,10 +9,16 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
   - enabled: 1
+    path: Assets/Scenes/Bootsrap.unity
+    guid: 0e9d42dd4c7630c4fb0a647c78881596
+  - enabled: 1
     path: Assets/Scenes/main menu.unity
     guid: a446c11019f284244a8f1bf0f535ae18
   - enabled: 1
     path: Assets/Scenes/main.unity
     guid: 78a510c781f19db4da14f78ebb30946a
+  - enabled: 1
+    path: Assets/Scenes/Leaderboard.unity
+    guid: 1280191b6a5a3964bb46e2f386e74e8a
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
