@@ -71,14 +71,9 @@ public class PersistenceManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    void Start()
+    private void OnApplicationQuit()
     {
-        if (_leaderboard == null)
-        {
-            _leaderboard = new List<PlayerScore>();
-        }
-        LoadAll();
-        SceneManager.LoadScene("main menu");
+        Save();
     }
 
     /// <summary>

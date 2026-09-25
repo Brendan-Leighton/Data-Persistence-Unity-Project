@@ -128,7 +128,6 @@
   <Project Path="Unity.RenderPipelines.Universal.Runtime.Player.csproj" />
   <Project Path="Unity.PerformanceTesting.Player.csproj" />
   <Project Path="Unity.TextMeshPro.Player.csproj" />
-  <Project Path="Unity.Rendering.LightTransport.Runtime.Player.csproj" />
   <Project Path="Unity.AI.Tracing.Player.csproj" />
   <Project Path="Unity.AppUI.MVVM.Player.csproj" />
   <Project Path="Unity.Multiplayer.Center.Common.Player.csproj" />

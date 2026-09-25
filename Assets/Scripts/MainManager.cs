@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.InputSystem; // MIGRATED: New Input System namespace
+using TMPro; 
 
 public class MainManager : MonoBehaviour
 {
@@ -11,8 +12,8 @@ public class MainManager : MonoBehaviour
     public int LineCount = 6;
     public Rigidbody Ball;
 
-    public Text ScoreText;
-    public Text bestScoreText;
+    public TMP_Text ScoreText;
+    public TMP_Text bestScoreText;
     public GameObject GameOverText;
 
     private bool m_Started = false;
@@ -108,11 +109,11 @@ public class MainManager : MonoBehaviour
         var leaderboard = PersistenceManager.instance.GetLeaderboard();
         if (leaderboard.Count > 0 && leaderboard[0] != null)
         {
-            bestScoreText.text = $"Best Score : {leaderboard[0].name} : {leaderboard[0].score}";
+            bestScoreText.text = $"{leaderboard[0].name} : {leaderboard[0].score}";
         }
         else
         {
-            bestScoreText.text = "Best Score : None : 0";
+            bestScoreText.text = "None : 0";
             Debug.Log("PersistenceManager.instance.highScorer is null");
         }
     }
